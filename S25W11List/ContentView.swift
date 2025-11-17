@@ -17,9 +17,9 @@ struct MyList: View {
             
         }
         .onAppear {
-            viewModel.add(song: Song(id: 1, title: "Golden", singer: "HUNTR/X"))
-            viewModel.add(song: Song(id: 2, title: "Drowning", singer: "WOODZ"))
-            viewModel.add(song: Song(id: 3, title: "Soda Pop", singer: "Saja Boys"))
+            viewModel.add(song: Song(title: "Golden", singer: "HUNTR/X"))
+            viewModel.add(song: Song(title: "Drowning", singer: "WOODZ"))
+            viewModel.add(song: Song(title: "Soda Pop", singer: "Saja Boys"))
         }
     }
 }
@@ -39,6 +39,7 @@ struct TextTitle: View {
     let title: String
     var body: some View {
         Text(title)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .font(.headline)
             .foregroundColor(.blue)
             .padding()
@@ -49,6 +50,7 @@ struct TextSinger: View {
     let singer: String
     var body: some View {
         Text(singer)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .font(.caption)
             .foregroundColor(.gray)
             .padding()
